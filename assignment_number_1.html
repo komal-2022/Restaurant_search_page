@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link href="./assignment.css"> -->
+    <script src="./asssgnm1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assignment.css">
+
+
+    <title>Assignment 1</title>
+    <!-- <style>
+        .elogo {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #eb2929;
+    font-family: poppins;
+    font-size: 26px;
+    padding-left: 15%;
+}
+    </style> -->
+
+</head>
+
+
+<body>
+    <!-- <div class="container-fluid text-center"> -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #eb2929;">
+        <div class="container-fluid">
+            <div class="col- md-11 offset-md-1">
+                <a class="navbar-brand" href="https://www.edureka.co/">
+                    <label class="elogo">e!</label>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="col-md-3 offset-md-9">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-light" type="submit">Create an Account</button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav><br>
+
+    <div class="main">
+
+        <h1 class="darkBlue resultHeading">Breakfast Place in Mumbai</h1>
+
+        <!--  -->
+        <button onclick="toggleFilters()" class="filtersButton">
+            <p class="darkBlue">Filters / Sort</p>
+            <i id='filtersButtonArrow' class="arrow arrowDown"></i>
+        </button>
+        <!--  -->
+
+
+        <div class="mainContent">
+            <form id="filters" method="GET" class="filters">
+                <h4>Filters</h4>
+                <h5>Select Location</h5>
+
+                <!--  -->
+
+                <select class="locationSelect">
+                    <option id="opt1" value="none" class="locationOption">
+                        <p>Select Location</p>
+                    </option>
+                    <option value="Mumbai India" class="locationOption">Mumbai India</option>
+                    <option value="Mumbai-Bangalore Highyay" class="locationOption">Mumbai-Bangalore Highyay</option>
+                    <option value="Mumbai Central Railway Statin" class="locationOption">
+                        Mumbai Central Railway Statin
+                    </option>
+                    <option value="Mumbai Airport Lounge" class="locationOption">Mumbai Airport Lounge</option>
+                    <option value="Mumbai CST Area i" class="locationOption">Mumbai CST Area </option>
+                    <option value="Chennai" class="locationOption">Chennai</option>
+                </select>
+                <!--  -->
+
+
+                <h5>Cuisine</h5>
+                <div class="cuisines">
+                    <label class="cuisine">North Indian
+                        <input type="checkbox" name="northIndian" id="northIndian" />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">South Indian
+                        <input type="checkbox" name="southIndian" id="southIndian" checked />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">Chinese
+                        <input type="checkbox" name="chinese" id="chinese" checked />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">Fast Food
+                        <input type="checkbox" name="fastFood" id="fastFood" />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                    <label class="cuisine">Street Food
+                        <input type="checkbox" name="streetFood" id="streetFood" />
+                        <span class="checkmark">
+                            <i class="zmdi zmdi-check zmdi-hc-lg"></i>
+                        </span>
+                    </label>
+                </div>
+                <h5>Cost For Two</h5>
+                <div class="costRange">
+                    <label class="cost">Less than 500
+                        <input type="radio" name="costRange" value="500" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 500 to ` 1000
+                        <input type="radio" name="costRange" value="500-1000" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 1000 to ` 1500
+                        <input type="radio" name="costRange" value="1000-1500" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 1500 to ` 2000
+                        <input type="radio" name="costRange" value="1500-2000" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                    <label class="cost">` 2000+
+                        <input type="radio" name="costRange" value="2000+" />
+                        <span class="radioCircle"></span>
+                        <span class="radioInnerCircle"></span>
+                    </label>
+                </div>
+                <h4>Sort</h4>
+                <label class="sort">Price low to high
+                    <input type="radio" name="sortdirection" value="l2h" />
+                    <span class="radioCircle"></span>
+                    <span class="radioInnerCircle"></span>
+                </label>
+                <label class="sort">Price high to low
+                    <input type="radio" name="sortdirection" value="h2l" />
+                    <span class="radioCircle"></span>
+                    <span class="radioInnerCircle"></span>
+                </label>
+
+                <button class="applyFilters">
+                    Apply
+                </button>
+            </form>
+
+            <div class="products">
+                <div class="productList">
+                    <div class="product">
+                        <div class="productHead">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1280px-Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="image"/>
+                            <div class="placeDesc">
+                                <h1 class="darkBlue">The Big Chill Cakery</h1>
+                                <h4 class="darkBlue">FORT</h4>
+                                <p class=" text-muted darkBlue">Shop 1, Plot D, Samruddhi Complex, Chincholi …</p>
+                            </div>
+                        </div>
+
+                        <div class="productFoot">
+                            <div class="featureLabels">
+                                <p>CUISINES:</p>
+                                <p>COST FOR TWO:</p>
+                            </div>
+                            <div class="features darkBlue">
+                                <p>Bakery</p>
+                                <p>₹ 700</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="productHead">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Joachim_Beuckelaer_-_Keukensc%C3%A8ne_met_Christus_en_de_Emma%C3%BCsgangers.jpg/1280px-Joachim_Beuckelaer_-_Keukensc%C3%A8ne_met_Christus_en_de_Emma%C3%BCsgangers.jpg" alt="image"/>
+                            <div class="placeDesc">
+                                <h1 class="darkBlue">The Bake Shop</h1>
+                                <h4 class="darkBlue">FORT</h4>
+                                <p class=" text-muted darkBlue">Shop 101, Model Town Road, Ludhiana …</p>
+                            </div>
+                        </div>
+
+                        <div class="productFoot">
+                            <div class="featureLabels">
+                                <p>CUISINES:</p>
+                                <p>COST FOR TWO:</p>
+                            </div>
+                            <div class="features darkBlue">
+                                <p>Bakery</p>
+                                <p>₹ 700</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- pagination start here -->
+                <div class="productsNavButtons">
+                    <button class="productButton" id="prevButton">
+                        <i>&#x221F;</i>
+                    </button>
+                    <button class="productButton selectedButton">
+                        <span>1</span>
+                    </button>
+                    <button class="productButton">
+                        <span>2</span>
+                    </button>
+                    <button class="productButton">
+                        <span>3</span>
+                    </button>
+                    <button class="productButton">
+                        <span>4</span>
+                    </button>
+                    <button class="productButton">
+                        <span>5</span>
+                    </button>
+                    <button class="productButton" id="nextButton">
+                        <i>&#x221F;</i>
+                    </button>
+                </div>
+
+                <!-- pagination end her -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
